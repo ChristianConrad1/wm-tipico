@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include head %>
+</head>
+
+<body class="container" id="admin">
+  <main>
+    <div class="container">
+      <form>
+        <div class="row">
+          <div class="input-field col s4">
+            <input type='number' placeholder="Match ID" id="matchID" name="matchID" type="text" class="validate" value="<%= matchID %>">
+            <label for="username">Match ID</label>
+          </div>
+          <div class="input-field col s4">
+            <input type='number' placeholder="Score Team 1" id="scoreTeam1" name="scoreTeam1" type="text" class="validate">
+            <label for="username">Score Team 1</label>
+          </div>
+          <div class="input-field col s4">
+            <input type='number' placeholder="Score Team 2" id="scoreTeam2" name="scoreTeam2" type="text" class="validate">
+            <label for="username">Score Team 2</label>
+          </div>
+        </div>
+        <div class="row">
+          <a class="waves-effect waves-light btn" id="matchSubmit">Submit</a>
+        </div>
+      </form>
+    </div>
+    <p class="center-align">Created by Christian Conrad</p>
+  </main>
+
+
+
+</body>
+
+</html>

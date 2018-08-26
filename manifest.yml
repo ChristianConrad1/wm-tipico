@@ -1,0 +1,4 @@
+applications:
+- name: wm-tipico
+  command: node app.js
+  framework: node

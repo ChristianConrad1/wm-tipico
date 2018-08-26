@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include head %>
+</head>
+
+<body>
+
+  <header>
+    <%- include header %>
+  </header>
+  <%- include sidenav-leaderboard %>
+    <main class="leaderboard">
+      <div class="container" id="main-window">
+        <div class="row">
+          <div class="col s12" id="gamelist">
+            <div class="container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      Platz
+                    </th>
+                    <th>
+                      Username
+                    </th>
+                    <th>
+                      Punkte
+                    </th>
+                    <th>Weltmeister</th>
+                  </tr>
+                </thead>
+                <% for (var i= 1; i <= leaderboard.length; i++) { %>
+                  <tr>
+                    <td>
+                      <%= i %>
+                    </td>
+                    <td>
+                      <%= leaderboard[i-1].username %>
+                    </td>
+                    <td>
+                      <%= leaderboard[i-1].points %>
+                    </td>
+                    <td>
+                      <%= leaderboard[i-1].champion %>
+                    </td>
+                  </tr>
+                  <% } %>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+</body>
+
+</html>

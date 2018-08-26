@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include head %>
+</head>
+
+<body>
+
+  <header>
+    <%- include header %>
+  </header>
+
+
+  <%- include sidenav %>
+
+    <!-- Champion Popup -->
+    <!--
+    <% if (champion == null ) { %>
+      <div id='championmodal' class='modal'>
+        <div class="championmodalcontent">
+          <div class='modal-content'>
+            <h4>Wähle deinen Weltmeister</h4>
+            <div class="input-field col s12">
+              <select id="championselect">
+            <option value="1" disabled selected>Auswählen...</option>
+            <option>Uruguay</option>
+            <option>Portugal</option>
+            <option>Frankreich</option>
+            <option>Argentinien</option>
+            <option>Brasilien</option>
+            <option>Mexiko</option>
+            <option>Belgien</option>
+            <option>Japan</option>
+            <option>Spanien</option>
+            <option>Russland</option>
+            <option>Kroatien</option>
+            <option>Dänemark</option>
+            <option>Schweden</option>
+            <option>Schweiz</option>
+            <option>Kolumbien</option>
+            <option>England</option>
+            </select>
+            </div>
+            <span><i class="material-icons">warning</i>Achtung: Kann nicht geändert werden!</span>
+
+          </div>
+          <div class="modal-footer">
+            <a id="championsubmit" class='waves-effect waves-green btn-flat'>Send</a>
+          </div>
+        </div>
+      </div>
+
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#championmodal').modal({
+            dismissible: false
+          });
+          $('#championmodal').modal('open');
+        });
+      </script>
+      <% } %> -->
+
+
+    <!-- Champion Popup -->
+
+    <main class="profile">
+      <div class="container" id="main-window">
+        <div class="row">
+          <div class="col s12" id="gamelist">
+            <div class="container">
+
+              <div class="gameday" id="day1" style="display: none">
+                <h2 class="center">Spieltag 1</h2>
+                <h3 class="center">14.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g0">
+                      <td>17:00</td>
+                      <td>Russland</td>
+                      <td>
+                        <p>
+                          <%= a00 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a01 %>
+                        </p>
+                      </td>
+                      <td>Saudi-Arabien</td>
+                      <td>
+                        <% if (results.result0) { %>
+                          <span class="result"><%= results.result0 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">15.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g1">
+                      <td>14:00</td>
+                      <td>Ägypten</td>
+                      <td>
+                        <p>
+                          <%= a10 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a11 %>
+                        </p>
+                      </td>
+                      <td>Uruguay</td>
+                      <td>
+                        <% if (results.result1) { %>
+                          <span class="result"><%= results.result1 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g2">
+                      <td>17:00</td>
+                      <td>Marokko</td>
+                      <td>
+                        <p>
+                          <%= a20 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a21 %>
+                        </p>
+                      </td>
+                      <td>Iran</td>
+                      <td>
+                        <% if (results.result2) { %>
+                          <span class="result"><%= results.result2 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g3">
+                      <td>20:00</td>
+                      <td>Portugal</td>
+                      <td>
+                        <p>
+                          <%= a30 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a31 %>
+                        </p>
+                      </td>
+                      <td>Spanien</td>
+                      <td>
+                        <% if (results.result3) { %>
+                          <span class="result"><%= results.result3 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">16.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g4">
+                      <td>12:00</td>
+                      <td>Frankreich</td>
+                      <td>
+                        <p>
+                          <%= a40 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a41 %>
+                        </p>
+                      </td>
+                      <td>Australien</td>
+                      <td>
+                        <% if (results.result4) { %>
+                          <span class="result"><%= results.result4 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g5">
+                      <td>15:00</td>
+                      <td>Argentinien</td>
+                      <td>
+                        <p>
+                          <%= a50 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a51 %>
+                        </p>
+                      </td>
+                      <td>Island</td>
+                      <td>
+                        <% if (results.result5) { %>
+                          <span class="result"><%= results.result5 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g6">
+                      <td>18:00</td>
+                      <td>Peru</td>
+                      <td>
+                        <p>
+                          <%= a60 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a61 %>
+                        </p>
+                      </td>
+                      <td>Dänemark</td>
+                      <td>
+                        <% if (results.result6) { %>
+                          <span class="result"><%= results.result6 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g7">
+                      <td>21:00</td>
+                      <td>Kroatien</td>
+                      <td>
+                        <p>
+                          <%= a70 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a71 %>
+                        </p>
+                      </td>
+                      <td>Nigeria</td>
+                      <td>
+                        <% if (results.result7) { %>
+                          <span class="result"><%= results.result7 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">17.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g8">
+                      <td>14:00</td>
+                      <td>Costa Rica</td>
+                      <td>
+                        <p>
+                          <%= a80 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a81 %>
+                        </p>
+                      </td>
+                      <td>Serbien</td>
+                      <td>
+                        <% if (results.result8) { %>
+                          <span class="result"><%= results.result8 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g9">
+                      <td>17:00</td>
+                      <td>Deutschland</td>
+                      <td>
+                        <p>
+                          <%= a90 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a91 %>
+                        </p>
+                      </td>
+                      <td>Mexiko</td>
+                      <td>
+                        <% if (results.result9) { %>
+                          <span class="result"><%= results.result9 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g10">
+                      <td>20:00</td>
+                      <td>Brasilien</td>
+                      <td>
+                        <p>
+                          <%= a100 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a101 %>
+                        </p>
+                      </td>
+                      <td>Schweiz</td>
+                      <td>
+                        <% if (results.result10) { %>
+                          <span class="result"><%= results.result10 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">18.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g11">
+                      <td>14:00</td>
+                      <td>Schweden</td>
+                      <td>
+                        <p>
+                          <%= a110 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a111 %>
+                        </p>
+                      </td>
+                      <td>Südkorea</td>
+                      <td>
+                        <% if (results.result11) { %>
+                          <span class="result"><%= results.result11 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g12">
+                      <td>17:00</td>
+                      <td>Belgien</td>
+                      <td>
+                        <p>
+                          <%= a120 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a121 %>
+                        </p>
+                      </td>
+                      <td>Panama</td>
+                      <td>
+                        <% if (results.result12) { %>
+                          <span class="result"><%= results.result12 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g13">
+                      <td>20:00</td>
+                      <td>Tunesien</td>
+                      <td>
+                        <p>
+                          <%= a130 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a131 %>
+                        </p>
+                      </td>
+                      <td>England</td>
+                      <td>
+                        <% if (results.result13) { %>
+                          <span class="result"><%= results.result13 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">19.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g14">
+                      <td>14:00</td>
+                      <td>Kolumbien</td>
+                      <td>
+                        <p>
+                          <%= a140 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a141 %>
+                        </p>
+                      </td>
+                      <td>Japan</td>
+                      <td>
+                        <% if (results.result14) { %>
+                          <span class="result"><%= results.result14 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g15">
+                      <td>17:00</td>
+                      <td>Polen</td>
+                      <td>
+                        <p>
+                          <%= a150 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a151 %>
+                        </p>
+                      </td>
+                      <td>Senegal</td>
+                      <td>
+                        <% if (results.result15) { %>
+                          <span class="result"><%= results.result15 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+              <div class="gameday" id="day2" style="display: none">
+                <h2 class="center">Spieltag 2</h2>
+                <h3 class="center">19.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g16">
+                      <td>20:00</td>
+                      <td>Russland</td>
+                      <td>
+                        <p>
+                          <%= a160 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a161 %>
+                        </p>
+                      </td>
+                      <td>Ägypten</td>
+                      <td>
+                        <% if (results.result16) { %>
+                          <span class="result"><%= results.result16 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">20.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g17">
+                      <td>14:00</td>
+                      <td>Portugal</td>
+                      <td>
+                        <p>
+                          <%= a170 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a171 %>
+                        </p>
+                      </td>
+                      <td>Marokko</td>
+                      <td>
+                        <% if (results.result17) { %>
+                          <span class="result"><%= results.result17 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g18">
+                      <td>17:00</td>
+                      <td>Uruguay</td>
+                      <td>
+                        <p>
+                          <%= a180 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a181 %>
+                        </p>
+                      </td>
+                      <td>Saudi-Arabien</td>
+                      <td>
+                        <% if (results.result18) { %>
+                          <span class="result"><%= results.result18 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g19">
+                      <td>20:00</td>
+                      <td>Iran</td>
+                      <td>
+                        <p>
+                          <%= a190 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a191 %>
+                        </p>
+                      </td>
+                      <td>Spanien</td>
+                      <td>
+                        <% if (results.result19) { %>
+                          <span class="result"><%= results.result19 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">21.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g20">
+                      <td>14:00</td>
+                      <td>Dänemark</td>
+                      <td>
+                        <p>
+                          <%= a200 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a201 %>
+                        </p>
+                      </td>
+                      <td>Australien</td>
+                      <td>
+                        <% if (results.result20) { %>
+                          <span class="result"><%= results.result20 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g21">
+                      <td>17:00</td>
+                      <td>Frankreich</td>
+                      <td>
+                        <p>
+                          <%= a210 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a211 %>
+                        </p>
+                      </td>
+                      <td>Peru</td>
+                      <td>
+                        <% if (results.result21) { %>
+                          <span class="result"><%= results.result21 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g22">
+                      <td>20:00</td>
+                      <td>Argentinien</td>
+                      <td>
+                        <p>
+                          <%= a220 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a221 %>
+                        </p>
+                      </td>
+                      <td>Kroatien</td>
+                      <td>
+                        <% if (results.result22) { %>
+                          <span class="result"><%= results.result22 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">22.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g23">
+                      <td>14:00</td>
+                      <td>Brasilien</td>
+                      <td>
+                        <p>
+                          <%= a230 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a231 %>
+                        </p>
+                      </td>
+                      <td>Costa Rica</td>
+                      <td>
+                        <% if (results.result23) { %>
+                          <span class="result"><%= results.result23 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g24">
+                      <td>17:00</td>
+                      <td>Nigeria</td>
+                      <td>
+                        <p>
+                          <%= a240 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a241 %>
+                        </p>
+                      </td>
+                      <td>Island</td>
+                      <td>
+                        <% if (results.result24) { %>
+                          <span class="result"><%= results.result24 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g25">
+                      <td>20:00</td>
+                      <td>Serbien</td>
+                      <td>
+                        <p>
+                          <%= a250 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a251 %>
+                        </p>
+                      </td>
+                      <td>Schweiz</td>
+                      <td>
+                        <% if (results.result25) { %>
+                          <span class="result"><%= results.result25 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">23.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g26">
+                      <td>14:00</td>
+                      <td>Belgien</td>
+                      <td>
+                        <p>
+                          <%= a260 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a261 %>
+                        </p>
+                      </td>
+                      <td>Tunesien</td>
+                      <td>
+                        <% if (results.result26) { %>
+                          <span class="result"><%= results.result26 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g27">
+                      <td>17:00</td>
+                      <td>Südkorea</td>
+                      <td>
+                        <p>
+                          <%= a270 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a271 %>
+                        </p>
+                      </td>
+                      <td>Mexiko</td>
+                      <td>
+                        <% if (results.result27) { %>
+                          <span class="result"><%= results.result27 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g28">
+                      <td>20:00</td>
+                      <td>Deutschland</td>
+                      <td>
+                        <p>
+                          <%= a280 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a281 %>
+                        </p>
+                      </td>
+                      <td>Schweden</td>
+                      <td>
+                        <% if (results.result28) { %>
+                          <span class="result"><%= results.result28 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">24.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g29">
+                      <td>14:00</td>
+                      <td>England</td>
+                      <td>
+                        <p>
+                          <%= a290 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a291 %>
+                        </p>
+                      </td>
+                      <td>Panama</td>
+                      <td>
+                        <% if (results.result29) { %>
+                          <span class="result"><%= results.result29 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g30">
+                      <td>17:00</td>
+                      <td>Japan</td>
+                      <td>
+                        <p>
+                          <%= a300 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a301 %>
+                        </p>
+                      </td>
+                      <td>Senegal</td>
+                      <td>
+                        <% if (results.result30) { %>
+                          <span class="result"><%= results.result30 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g31">
+                      <td>20:00</td>
+                      <td>Polen</td>
+                      <td>
+                        <p>
+                          <%= a310 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a311 %>
+                        </p>
+                      </td>
+                      <td>Kolumbien</td>
+                      <td>
+                        <% if (results.result31) { %>
+                          <span class="result"><%= results.result31 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+
+
+
+
+              <div class="gameday" id="day3" style="display: none;">
+                <h2 class="center">Spieltag 3</h2>
+                <h3 class="center">25.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g32">
+                      <td>16:00</td>
+                      <td>Uruguay</td>
+                      <td>
+                        <p>
+                          <%= a320 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a321 %>
+                        </p>
+                      </td>
+                      <td>Russland</td>
+                      <td>
+                        <% if (results.result32) { %>
+                          <span class="result"><%= results.result32 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g33">
+                      <td>16:00</td>
+                      <td>Saudi-Arabien</td>
+                      <td>
+                        <p>
+                          <%= a330 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a331 %>
+                        </p>
+                      </td>
+                      <td>Ägypten</td>
+                      <td>
+                        <% if (results.result33) { %>
+                          <span class="result"><%= results.result33 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g34">
+                      <td>20:00</td>
+                      <td>Iran</td>
+                      <td>
+                        <p>
+                          <%= a340 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a341 %>
+                        </p>
+                      </td>
+                      <td>Portugal</td>
+                      <td>
+                        <% if (results.result34) { %>
+                          <span class="result"><%= results.result34 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g35">
+                      <td>20:00</td>
+                      <td>Spanien</td>
+                      <td>
+                        <p>
+                          <%= a350 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a351 %>
+                        </p>
+                      </td>
+                      <td>Marokko</td>
+                      <td>
+                        <% if (results.result35) { %>
+                          <span class="result"><%= results.result35 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">26.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g36">
+                      <td>16:00</td>
+                      <td>Dänemark</td>
+                      <td>
+                        <p>
+                          <%= a360 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a361 %>
+                        </p>
+                      </td>
+                      <td>Frankreich</td>
+                      <td>
+                        <% if (results.result36) { %>
+                          <span class="result"><%= results.result36 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g37">
+                      <td>16:00</td>
+                      <td>Australien</td>
+                      <td>
+                        <p>
+                          <%= a370 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a371 %>
+                        </p>
+                      </td>
+                      <td>Peru</td>
+                      <td>
+                        <% if (results.result37) { %>
+                          <span class="result"><%= results.result37 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g38">
+                      <td>20:00</td>
+                      <td>Nigeria</td>
+                      <td>
+                        <p>
+                          <%= a380 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a381 %>
+                        </p>
+                      </td>
+                      <td>Argentinien</td>
+                      <td>
+                        <% if (results.result38) { %>
+                          <span class="result"><%= results.result38 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g39">
+                      <td>20:00</td>
+                      <td>Island</td>
+                      <td>
+                        <p>
+                          <%= a390 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a391 %>
+                        </p>
+                      </td>
+                      <td>Kroatien</td>
+                      <td>
+                        <% if (results.result39) { %>
+                          <span class="result"><%= results.result39 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">27.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g40">
+                      <td>16:00</td>
+                      <td>Mexiko</td>
+                      <td>
+                        <p>
+                          <%= a400 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a401 %>
+                        </p>
+                      </td>
+                      <td>Schweden</td>
+                      <td>
+                        <% if (results.result40) { %>
+                          <span class="result"><%= results.result40 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g41">
+                      <td>16:00</td>
+                      <td>Südkorea</td>
+                      <td>
+                        <p>
+                          <%= a410 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a411 %>
+                        </p>
+                      </td>
+                      <td>Deutschland</td>
+                      <td>
+                        <% if (results.result41) { %>
+                          <span class="result"><%= results.result41 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g42">
+                      <td>20:00</td>
+                      <td>Serbien</td>
+                      <td>
+                        <p>
+                          <%= a420 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a421 %>
+                        </p>
+                      </td>
+                      <td>Brasilien</td>
+                      <td>
+                        <% if (results.result42) { %>
+                          <span class="result"><%= results.result42 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g43">
+                      <td>20:00</td>
+                      <td>Schweiz</td>
+                      <td>
+                        <p>
+                          <%= a430 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a431 %>
+                        </p>
+                      </td>
+                      <td>Costa Rica</td>
+                      <td>
+                        <% if (results.result43) { %>
+                          <span class="result"><%= results.result43 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3 class="center">28.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g44">
+                      <td>16:00</td>
+                      <td>Japan</td>
+                      <td>
+                        <p>
+                          <%= a440 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a441 %>
+                        </p>
+                      </td>
+                      <td>Polen</td>
+                      <td>
+                        <% if (results.result44) { %>
+                          <span class="result"><%= results.result44 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g45">
+                      <td>16:00</td>
+                      <td>Senegal</td>
+                      <td>
+                        <p>
+                          <%= a450 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a451 %>
+                        </p>
+                      </td>
+                      <td>Kolumbien</td>
+                      <td>
+                        <% if (results.result45) { %>
+                          <span class="result"><%= results.result45 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g46">
+                      <td>20:00</td>
+                      <td>Panama</td>
+                      <td>
+                        <p>
+                          <%= a460 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a461 %>
+                        </p>
+                      </td>
+                      <td>Tunesien</td>
+                      <td>
+                        <% if (results.result46) { %>
+                          <span class="result"><%= results.result46 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g47">
+                      <td>20:00</td>
+                      <td>England</td>
+                      <td>
+                        <p>
+                          <%= a470 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a471 %>
+                        </p>
+                      </td>
+                      <td>Belgien</td>
+                      <td>
+                        <% if (results.result47) { %>
+                          <span class="result"><%= results.result47 %>
+                            </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="gameday" id="day4" style="display: none">
+                <h2 class="center">Achtelfinale</h2>
+                <h3 class="center">30.06.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g48">
+                      <td>16:00</td>
+                      <td>Frankreich</td>
+                      <td>
+                        <p>
+                          <%= a480 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a481 %>
+                        </p>
+                      </td>
+                      <td>Argentinien</td>
+                      <td>
+                        <% if (results.result48) { %>
+                          <span class="result"><%= results.result48 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g49">
+                      <td>20:00</td>
+                      <td>Uruguay</td>
+                      <td>
+                        <p>
+                          <%= a490 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a491 %>
+                        </p>
+                      </td>
+                      <td>Portugal</td>
+                      <td>
+                        <% if (results.result49) { %>
+                          <span class="result"><%= results.result49 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="center">01.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g50">
+                      <td>16:00</td>
+                      <td>Spanien</td>
+                      <td>
+                        <p>
+                          <%= a500 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a501 %>
+                        </p>
+                      </td>
+                      <td>Russland</td>
+                      <td>
+                        <% if (results.result50) { %>
+                          <span class="result"><%= results.result50 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g51">
+                      <td>20:00</td>
+                      <td>Kroatien</td>
+                      <td>
+                        <p>
+                          <%= a510 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a511 %>
+                        </p>
+                      </td>
+                      <td>Dänemark</td>
+                      <td>
+                        <% if (results.result51) { %>
+                          <span class="result"><%= results.result51 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="center">02.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g52">
+                      <td>16:00</td>
+                      <td>Brasilien</td>
+                      <td>
+                        <p>
+                          <%= a520 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a521 %>
+                        </p>
+                      </td>
+                      <td>Mexiko</td>
+                      <td>
+                        <% if (results.result52) { %>
+                          <span class="result"><%= results.result52 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g53">
+                      <td>20:00</td>
+                      <td>Belgien</td>
+                      <td>
+                        <p>
+                          <%= a530 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a531 %>
+                        </p>
+                      </td>
+                      <td>Japan</td>
+                      <td>
+                        <% if (results.result53) { %>
+                          <span class="result"><%= results.result53 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="center">03.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g54">
+                      <td>16:00</td>
+                      <td>Schweden</td>
+                      <td>
+                        <p>
+                          <%= a540 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a541 %>
+                        </p>
+                      </td>
+                      <td>Schweiz</td>
+                      <td>
+                        <% if (results.result54) { %>
+                          <span class="result"><%= results.result54 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g55">
+                      <td>20:00</td>
+                      <td>Kolumbien</td>
+                      <td>
+                        <p>
+                          <%= a550 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a551 %>
+                        </p>
+                      </td>
+                      <td>England</td>
+                      <td>
+                        <% if (results.result55) { %>
+                          <span class="result"><%= results.result55 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+              <div class="gameday" id="day5" style="display: none">
+                <h2 class="center">Viertelfinale</h2>
+                <h3 class="center">06.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g56">
+                      <td>16:00</td>
+                      <td>Uruguay</td>
+                      <td>
+                        <p>
+                          <%= a560 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a561 %>
+                        </p>
+                      </td>
+                      <td>Frankreich</td>
+                      <td>
+                        <% if (results.result56) { %>
+                          <span class="result"><%= results.result56 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g57">
+                      <td>20:00</td>
+                      <td>Brasilien</td>
+                      <td>
+                        <p>
+                          <%= a570 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a571 %>
+                        </p>
+                      </td>
+                      <td>Belgien</td>
+                      <td>
+                        <% if (results.result57) { %>
+                          <span class="result"><%= results.result57 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="center">07.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g58">
+                      <td>16:00</td>
+                      <td>Schweden</td>
+                      <td>
+                        <p>
+                          <%= a580 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a581 %>
+                        </p>
+                      </td>
+                      <td>England</td>
+                      <td>
+                        <% if (results.result58) { %>
+                          <span class="result"><%= results.result58 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                    <tr id="g59">
+                      <td>20:00</td>
+                      <td>Russland</td>
+                      <td>
+                        <p>
+                          <%= a590 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a591 %>
+                        </p>
+                      </td>
+                      <td>Kroatien</td>
+                      <td>
+                        <% if (results.result59) { %>
+                          <span class="result"><%= results.result59 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="gameday" id="day6" style="display: none">
+                <h2 class="center">Halbfinale</h2>
+                <h3 class="center">10.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g60">
+                      <td>20:00</td>
+                      <td>Frankreich</td>
+                      <td>
+                        <p>
+                          <%= a600 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a601 %>
+                        </p>
+                      </td>
+                      <td>Belgien</td>
+                      <td>
+                        <% if (results.result60) { %>
+                          <span class="result"><%= results.result60 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3 class="center">11.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g61">
+                      <td>20:00</td>
+                      <td>Kroatien</td>
+                      <td>
+                        <p>
+                          <%= a610 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a611 %>
+                        </p>
+                      </td>
+                      <td>England</td>
+                      <td>
+                        <% if (results.result61) { %>
+                          <span class="result"><%= results.result61 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="gameday" id="day7" style="display: none">
+                <h2 class="center">Spiel um Platz 3</h2>
+                <h3 class="center">14.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g62">
+                      <td>16:00</td>
+                      <td>Belgien</td>
+                      <td>
+                        <p>
+                          <%= a620 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a621 %>
+                        </p>
+                      </td>
+                      <td>England</td>
+                      <td>
+                        <% if (results.result62) { %>
+                          <span class="result"><%= results.result62 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h2 class="center">Finale</h2>
+                <h3 class="center">15.07.2018</h3>
+                <table>
+                  <tbody>
+                    <tr id="g63">
+                      <td>17:00</td>
+                      <td>Frankreich</td>
+                      <td>
+                        <p>
+                          <%= a630 %>
+                        </p>
+                      </td>
+                      <td>-:-</td>
+                      <td>
+                        <p>
+                          <%= a631 %>
+                        </p>
+                      </td>
+                      <td>Kroatien</td>
+                      <td>
+                        <% if (results.result63) { %>
+                          <span class="result"><%= results.result63 %>
+                          </span>
+                          <% } else { %>
+                            <a class="btn-floating waves-effect waves-light red tipedit tipbutton"><i class="material-icons">edit</i></a>
+                            <% } %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include modal %>
+    </main>
+
+
+
+</body>
+
+</html>
